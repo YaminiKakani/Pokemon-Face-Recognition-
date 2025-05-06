@@ -1,10 +1,8 @@
-# 🧠 Pokémon Face Recognition using CNNs
+# Pokémon Face Recognition using CNNs
 
 A deep learning project for classifying Pokémon faces using transfer learning with MobileNetV2, EfficientNetB0, and ResNet50, accompanied by a Streamlit-based web application for real-time predictions.
 
-![GitHub](https://img.shields.io/badge/license-MIT-blue) [![Streamlit](https://static.streamlit.io/badges/streamlit_badge_black_white.svg)](https://yamini-kakani-pokemon-face-recognition.streamlit.app/)
-
-## 🧾 Project Overview
+## Project Overview
 
 This project explores the adaptability of pre-trained CNNs to stylized, domain-specific datasets like Pokémon faces. It evaluates the performance of three architectures:
 
@@ -30,7 +28,7 @@ Each model was fine-tuned on a curated Pokémon dataset and evaluated using:
 
 ## Dataset
 
-- **Source:** [Kaggle - Pokémon Classification](https://www.kaggle.com/datasets/lantian773030/pokemon-classification)
+- **Source:** [Kaggle - Pokémon Classification](https://www.kaggle.com/datasets/lantian773030/pokemonclassification)
 - **Size:** ~7000 images, filtered to 2018 samples across 38 Pokémon species
 - **Preprocessing:**
   - Class balancing (≥50 images)
@@ -62,11 +60,11 @@ Each model was fine-tuned on a curated Pokémon dataset and evaluated using:
 
 ## Results
 
-| Model         | Test Accuracy | Macro F1 | AUC-ROC | Inference Time | Use Case             |
-|---------------|---------------|----------|---------|----------------|----------------------|
-| MobileNetV2   | 91.03%        | 0.91     | 0.9990  | ⏱ ~11s         | Mobile/Edge devices  |
-| EfficientNetB0| 94.02%        | 0.94     | 0.9995  | ⏱ ~22s         | Balanced deployment  |
-| ResNet50      | 96.01%        | 0.96     | 0.9999  | ⏱ ~7s          | High-precision tasks |
+| Model         | Test Accuracy | Macro F1 | AUC-ROC | Use Case             |
+|---------------|---------------|----------|---------|----------------------|
+| MobileNetV2   | 91.03%        | 0.91     | 0.9990  | Mobile/Edge devices  |
+| EfficientNetB0| 94.02%        | 0.94     | 0.9995  | Balanced deployment  |
+| ResNet50      | 96.01%        | 0.96     | 0.9999  | High-precision tasks |
 
 - ResNet50 had the best classification performance.
 - EfficientNetB0 offered the best balance of accuracy vs. efficiency.
@@ -79,14 +77,13 @@ Each model was fine-tuned on a curated Pokémon dataset and evaluated using:
    ```bash
    git clone https://github.com/YaminiKakani/Pokemon-Face-Recognition-.git
    cd Pokemon-Face-Recognition-
+   
+2. Installing dependencies
+   ```bash
+   pip install -r requirements.txt
 
-pip install -r requirements.txt
+3. Running the web app
+   ```bash
+   streamlit run App.py
 
-## Run the Streamlit app
-
-Metric	MobileNetV2	EfficientNetB0	ResNet50
-Test Accuracy	91.03%	94.02%	96.01%
-Macro F1-Score	0.91	0.94	0.96
-Inference Time (10 batches)	~11 sec	~22 sec	~7 sec
-Best Use Case	Mobile/Edge	Balanced	High Precision
 
